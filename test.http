@@ -1,28 +1,92 @@
 ### API calls for BlogAPI
 
-### GET all blog posts
-
+### call to local host
 GET http://localhost:3000/ HTTP/1.1
 
-###
-
+### GET all blog post
 GET http://localhost:3000/api/blogposts/ HTTP/1.1
 
-### 
+### GET blogpost by ID
 GET http://localhost:3000/api/blogposts/87 HTTP/1.1
 
-### GET all users
+### CREATE a blog post
+POST http://localhost:3000/api/blogposts/ HTTP/1.1
+Content-Type: application/json
 
+{
+    "title": "This is My Blog Post Title",
+    "body": "Life is good.",
+    "userId": 1
+}
+
+### UPDATE an exisiting blog post
+PUT http://localhost:3000/api/blogposts/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "This is the changed title"
+}
+
+### DELETE a blog post
+DELETE http://localhost:3000/api/blogposts/1 HTTP/1.1
+
+
+
+### GET all users
 GET http://localhost:3000/api/user HTTP/1.1
 
 ### GET all users by ID
-
 GET http://localhost:3000/api/user/1 HTTP/1.1
 
-### GET all todos
+### CREATE a user
+POST http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
 
+{
+    "name": "Brittany",
+    "username": "Brit",
+    "userId": 1
+}
+
+
+### UPDATE an exisiting user
+PUT http://localhost:3000/api/user/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Brittany Micek"
+
+}
+
+### DELETE a user
+DELETE http://localhost:3000/api/user/3  HTTP/1.1
+
+
+### GET all todos
 GET http://localhost:3000/api/todo HTTP/1.1
 
-### GET todos by ID
+### GET todo by ID
 GET http://localhost:3000/api/todo/6 HTTP/1.1
+
+### CREATE a todo
+POST http://localhost:3000/api/todo HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Laundry",
+    "completed": false,
+    "userId": 2
+}
+
+
+### UPDATE an exisiting todo
+PUT http://localhost:3000/api/todo/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Grocery shopping"
+}
+
+### DELETE a todo
+DELETE http://localhost:3000/api/todo/9  HTTP/1.1
 

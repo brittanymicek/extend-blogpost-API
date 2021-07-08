@@ -8,8 +8,14 @@ module.exports = (app) => {
   //GET student by ID
   router.get("/:id", controller.findById);
 
-  //   router.get("/", function (req, res) {
-  //     res.send("You have reached the router handler for getting all blog posts.");
-  //   });
+  // Create a blog post
+  router.post("/", controller.create);
+
+  // update an existing blog post
+  router.put("/:id", controller.update);
+
+  // delete a blog post
+  router.delete("/:id", controller.deleteById);
+
   app.use("/api/blogposts/", router);
 };
